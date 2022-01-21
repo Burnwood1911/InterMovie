@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:inter_movie/screens/home.dart';
 import 'package:inter_movie/services/api_service.dart';
@@ -14,19 +17,30 @@ class _LoginState extends State<Login> {
   String email = '';
   String password = '';
   ApiService? _apiService;
+  bool isLoging = false;
 
   signIn() async {
+    
     if (_formKey.currentState!.validate()) {
+      setState(() {
+      isLoging = true;
+        });
       var resp = await _apiService!.loginResponse(email, password);
       if (resp == 'success') {
+        setState(() {
+          isLoging = false;
+        });
         Navigator.pushReplacement(
             context, MaterialPageRoute(builder: (context) => const Home()));
       } else {
-        ScaffoldMessenger.of(context).showSnackBar( SnackBar(
+        setState(() {
+          isLoging = false;
+        });
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           duration: const Duration(milliseconds: 1000),
           backgroundColor: Colors.red,
           content: Text(
-            resp,
+            resp.toUpperCase(),
             style: const TextStyle(fontSize: 16),
           ),
         ));
@@ -43,7 +57,6 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: Form(
         key: _formKey,
         child: Container(
@@ -96,7 +109,9 @@ class _LoginState extends State<Login> {
                     onPressed: () {
                       signIn();
                     },
-                    child: const Text("LogIn")),
+                    child: !isLoging ? const Text("LogIn") : Platform.isAndroid
+                ? const CircularProgressIndicator(color: Colors.white,)
+                : const CupertinoActivityIndicator()),
               ),
               const SizedBox(
                 height: 18,

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +28,7 @@ class _MovieDetalViewState extends State<MovieDetalView> {
     super.initState();
   }
 
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<MovieDetail>(
@@ -35,7 +38,9 @@ class _MovieDetalViewState extends State<MovieDetalView> {
             return Scaffold(
               body: Container(
                   color: Colors.white,
-                  child: const Center(child: CupertinoActivityIndicator())),
+                  child:  Center(child: Platform.isAndroid
+                ? const CircularProgressIndicator()
+                : const CupertinoActivityIndicator())),
             );
           } else {
             MovieDetail movieDetail = snapshot.data!;

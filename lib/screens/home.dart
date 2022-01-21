@@ -82,11 +82,13 @@ class _HomeState extends State<Home> {
                                           fit: BoxFit.cover)),
                                 );
                               },
-                              placeholder: (context, url) => const SizedBox(
-                                width: 100,
-                                height: 135,
+                              placeholder: (context, url) =>  SizedBox(
+                                width: double.infinity,
+                                height: 220,
                                 child: Center(
-                                  child: CupertinoActivityIndicator(),
+                                  child: Platform.isAndroid
+                                    ? const CircularProgressIndicator()
+                                    : const CupertinoActivityIndicator(),
                                 ),
                               ),
                             ),
