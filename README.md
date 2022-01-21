@@ -12,7 +12,7 @@ By Alex Rossi
 
 #### Login Test Data (Regres)
 
-Username - eve.holt@reqres.in
+Username - eve.holt@reqres.in ,
 Password - pistol
 
 #### The Movie Database API KEY
@@ -21,8 +21,8 @@ Password - pistol
 
 #### Flutter
 
-- HTTP https://pub.dev/packages/http
-- Cached Network Image https://pub.dev/packages/cached_network_image
+- HTTP - https://pub.dev/packages/http
+- Cached Network Image - https://pub.dev/packages/cached_network_image
 
 ---
 
