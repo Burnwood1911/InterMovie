@@ -1,5 +1,7 @@
 # InterMovie - Demo Movie App
 
+Languages: Flutter and Dart
+
 By Alex Rossi
 
 ### Social Media
