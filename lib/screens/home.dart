@@ -4,6 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:inter_movie/models/movie_model.dart';
+import 'package:inter_movie/screens/movie_detail.dart';
 import 'package:inter_movie/services/api_service.dart';
 
 class Home extends StatefulWidget {
@@ -42,11 +43,7 @@ class _HomeState extends State<Home> {
       body: FutureBuilder<List<Movie>>(
         future: myFuture,
         builder: (context, snapshot) {
-          if (!snapshot.hasData) {
-            return const Center(
-              child: Text("No Movies Found"),
-            );
-          } else if (snapshot.connectionState == ConnectionState.waiting) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
             return Platform.isAndroid
                 ? const CircularProgressIndicator()
                 : const CupertinoActivityIndicator();
@@ -66,7 +63,9 @@ class _HomeState extends State<Home> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => MovieDetalView(movieId: movies[index].id!,)));
+                          },
                           child: ClipRRect(
                             child: CachedNetworkImage(
                               imageUrl:
@@ -75,7 +74,6 @@ class _HomeState extends State<Home> {
                                 return Container(
                                   width: double.infinity,
                                   height: 220,
-                                 
                                   decoration: BoxDecoration(
                                       borderRadius: const BorderRadius.all(
                                           Radius.circular(12)),
