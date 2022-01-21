@@ -10,7 +10,7 @@ class ApiService {
   final String baseUrl =
       'https://api.themoviedb.org/3'; // Movie Database Api Key
   final String apiKey =
-      'YOUR-API-KEY-HERE'; // Movie Database Base URL
+      '3a5a4ffaa8e90b1b48c448d9c96637da'; // Movie Database Base URL
 
   Future<String> loginResponse(String email, String password) async {
     try {

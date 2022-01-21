@@ -23,7 +23,6 @@ Password - pistol
 
 - HTTP - https://pub.dev/packages/http
 - Cached Network Image - https://pub.dev/packages/cached_network_image
-- URL LAUNCHER - https://pub.dev/packages/url_launcher
 
 ---
 
