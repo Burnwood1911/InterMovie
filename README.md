@@ -10,7 +10,7 @@ By Alex Rossi
 
 ### Requirements
 
-#### Login Test Data (Regres)
+#### Login Test Data (Reqres)
 
 Username - eve.holt@reqres.in ,
 Password - pistol
