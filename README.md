@@ -28,10 +28,12 @@ Password - pistol
 
 #### RUN
 
+- Clone the Repository "git clone https://github.com/Burnwood1911/InterMovie.git"
 - Run command in Terminal "flutter run"
 
 #### BUILD
 
+- Clone the Repository "git clone https://github.com/Burnwood1911/InterMovie.git"
 - Run Command in Terminal "flutter build apk" or "flutter build ios"
 
 ## Screenshot
