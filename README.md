@@ -26,6 +26,15 @@ Password - pistol
 
 ---
 
+#### RUN
+
+- Run command in Terminal "flutter run"
+
+#### BUILD
+
+- Run Command in Terminal "flutter build apk" or "flutter build ios"
+
 ## Screenshot
 
 <img src="https://i.imgur.com/Ih73t3J.png" />
+<img src="https://i.imgur.com/4491OKQ.png" />
