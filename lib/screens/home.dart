@@ -44,9 +44,9 @@ class _HomeState extends State<Home> {
         future: myFuture,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Platform.isAndroid
+            return Center(child: Platform.isAndroid
                 ? const CircularProgressIndicator()
-                : const CupertinoActivityIndicator();
+                : const CupertinoActivityIndicator(),);
           } else {
             List<Movie> movies = snapshot.data!;
             return GridView.builder(
